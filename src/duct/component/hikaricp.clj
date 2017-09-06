@@ -4,7 +4,8 @@
 
 (defn- make-config
   [{:keys [uri username password auto-commit? conn-timeout idle-timeout
-           max-lifetime conn-test-query min-idle max-pool-size pool-name]}]
+           max-lifetime conn-test-query min-idle max-pool-size pool-name
+           register-mbeans?]}]
   (let [cfg (HikariConfig.)]
     (when uri                  (.setJdbcUrl cfg uri))
     (when username             (.setUsername cfg username))
@@ -16,6 +17,7 @@
     (when max-pool-size        (.setMaximumPoolSize cfg max-pool-size))
     (when min-idle             (.setMinimumIdle cfg min-idle))
     (when pool-name            (.setPoolName cfg pool-name))
+    (when register-mbeans?     (.setRegisterMbeans cfg register-mbeans?))
     cfg))
 
 (defn- make-spec [component]
