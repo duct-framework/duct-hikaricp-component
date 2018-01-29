@@ -1,5 +1,7 @@
 # Duct-HikariCP-Component
 
+[![Build Status](https://travis-ci.org/duct-framework/duct-hikaricp-component.svg?branch=master)](https://travis-ci.org/duct-framework/duct-hikaricp-component)
+
 A [component][] for the [HikariCP][] JDBC connection pool, designed to be used
 in the [Duct][] framework.
 
