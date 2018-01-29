@@ -1,4 +1,4 @@
-(defproject duct/hikaricp-component "0.1.1"
+(defproject duct/hikaricp-component "0.1.2"
   :description "A component for managing a HikariCP connection pool"
   :url "https://github.com/weavejester/duct-hikaricp-component"
   :license {:name "Eclipse Public License"
