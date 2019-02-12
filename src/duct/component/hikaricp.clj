@@ -3,11 +3,12 @@
   (:import [com.zaxxer.hikari HikariConfig HikariDataSource]))
 
 (defn- make-config
-  [{:keys [uri username password auto-commit? conn-timeout idle-timeout
-           max-lifetime conn-test-query min-idle max-pool-size pool-name
+  [{:keys [uri driver-class-name username password auto-commit? conn-timeout
+           idle-timeout max-lifetime conn-test-query min-idle max-pool-size pool-name
            register-mbeans? metric-registry]}]
   (let [cfg (HikariConfig.)]
     (when uri                  (.setJdbcUrl cfg uri))
+    (when driver-class-name    (.setDriverClassName cfg driver-class-name))
     (when username             (.setUsername cfg username))
     (when password             (.setPassword cfg password))
     (when (some? auto-commit?) (.setAutoCommit cfg auto-commit?))
